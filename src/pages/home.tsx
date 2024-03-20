@@ -10,7 +10,7 @@ const Home = () => {
                     <Link to="https://github.com/naveenbabu4"><FaGithub /></Link>
                     <Link to="https://www.instagram.com/naveen_bahunadham"><FaInstagram /></Link>
                     <Link to="https://www.linkedin.in/in/naveenbahunadham"><FaLinkedinIn /></Link>
-                    <Link to="/"><FaFile /></Link>
+                    <Link to="/portfolio"><FaFile /></Link>
                 </div>
             </main>
             <aside>
