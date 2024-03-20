@@ -1,0 +1,116 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222831;
+  user-select: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.red {
+  color: red;
+}
+
+.purple {
+  color: rgb(47, 0, 255);
+}
+
+.green {
+  color: rgb(0, 195, 0);
+}
+
+$color1 : #222831;
+$color2 : #31363F;
+$color3 : #76ABAE;
+$color4 : #EEEEEE;
+
+@import "user-styles/mixin";
+
+
+.userName {
+  @include flex(row, flex-start, space-between, 1rem);
+  color: $color4;
+  padding: 8rem 1rem 1rem 20rem;
+  >main {
+    width: 50%;
+    @include flex(column, flex-start, flex-start, 1rem);
+    padding-top: 7rem;
+
+    >h1 {
+      @include heading(4px, 500);
+    }
+
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    >div {
+      @include flex(row, flex-start, center, 3rem);
+      font-size: 2rem;
+
+      >a {
+        color: $color3;
+      }
+
+      & :hover {
+        color: $color2;
+      }
+    }
+  }
+
+  >aside {
+    width: 50%;
+    @include flex(column, flex-start, center);
+    @include squareImage(25rem, "../assets/images/naveen.jpg");
+
+  }
+  @media screen and (width<=630px) {
+    @include flex(column, flex-start, center, 1rem);
+    color: $color4;
+    padding: 1rem;
+    padding-top: 8rem;
+    >main {
+      padding-top: 7rem;
+      padding-bottom:3rem ;
+      width: 80%;
+      >h1 {
+        @include heading(4px, 400);
+      }
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      >div {
+        @include flex(row, flex-start, center, 1rem);
+        font-size: 2rem;
+  
+        >a {
+          color: $color3;
+        }
+  
+        & :hover {
+          color: $color2;
+        }
+      }
+    }
+    >aside {
+      @include squareImage(12rem, "../assets/images/naveen.jpg");
+  
+    }
+  }
+}
